@@ -1,7 +1,16 @@
 Notsosimpleblog::Application.routes.draw do
+  get "categories/index"
+
+  get "categories/edit"
+
+  get "categories/new"
+
+  get "categories/show"
+
   get "home/index"
 	resources :posts
-  # The priority is based upon order of creation:
+	resources :categories  
+# The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
