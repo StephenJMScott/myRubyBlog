@@ -1,17 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Notsosimpleblog</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<% flash.each do |key, value| %>
-<p><%= value %></p>
-<% end %>
-
-<%= yield %>
+<%= render "partials/header" %>
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+				<div id ='flash-message'>
+				<% flash.each do |key, value| %>
+				<p><%= value %></p>
+				<% end %>
+				</div>
+				
+				<%= yield %>
+			
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->
+				<%= render "partials/sidebar" %>
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page -->
+	<div id="footer">
+		<p>&copy; 2013, My Ruby Blog - Sample Project</p>
+	</div>
+</div>
+<!-- end #footer -->
 
 </body>
 </html>
