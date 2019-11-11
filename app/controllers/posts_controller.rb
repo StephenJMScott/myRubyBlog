@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
 	def index
-		@posts = Post.all
+	@search = Post.search(params[:search])
+		@posts = @search.all
 	end
 	
 	def new
@@ -34,7 +35,8 @@ class PostsController < ApplicationController
 	
 	def show
 		@post = Post.find(params[:id])
-	
+		@user = AdminUser.all
+		@post_comment = PostComment.new(:post => @post)
 	end
 	
 	def destroy

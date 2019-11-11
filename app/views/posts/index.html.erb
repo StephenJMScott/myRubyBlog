@@ -3,6 +3,10 @@
 <div class = 'post'>
 <h3><%= link_to post.title, post %></h3>
 <p><%= post.body %></p>
+<div class="byline">
+	<p class="meta"><%= post.created_at %> Posted by <%= post.admin_user.name %></p>
+	<p class = 'links'> <%= link_to "Read More", post %> </p>
+</div>
 <hr>
 </div>
 <% end %>

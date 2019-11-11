@@ -137,6 +137,10 @@ a:hover {
 	padding: 20px 0px 0px 0px;
 }
 
+#search input[type="text"]{
+	width: 180px;
+}
+
 #search form {
 	height: 41px;
 	margin: 0;

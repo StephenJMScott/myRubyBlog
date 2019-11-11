@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20191108172326) do
+ActiveRecord::Schema.define(:version => 20191111180547) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20191108172326) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "name"
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
@@ -52,13 +53,24 @@ ActiveRecord::Schema.define(:version => 20191108172326) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "post_comments", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "body"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "post_comments", ["post_id"], :name => "index_post_comments_on_post_id"
+
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.integer  "category_id"
-    t.integer  "author_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "admin_user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

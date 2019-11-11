@@ -9,6 +9,7 @@ gem 'rails', '3.2.1'
 #gem 'sqlite3', '~>1.3.7'
 gem 'pg','~> 0.11' 
 gem 'activeadmin', "0.6.0"
+gem 'meta_search'
 
 # Gems used only for assets and not required
 # in production environments by default.
